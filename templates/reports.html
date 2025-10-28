@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4 class="mb-3">Reports & Exports</h4>
+<p class="text-muted">Generate and export reports to accounting tools (simulated).</p>
+
+<table class="table table-bordered table-sm bg-white">
+  <thead class="table-light">
+    <tr>
+      <th>ID</th>
+      <th>Biller</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th>Stage</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bill in bills %}
+    <tr>
+      <td>{{ bill.id }}</td>
+      <td>{{ bill.biller }}</td>
+      <td>₹{{ bill.amount }}</td>
+      <td>{{ bill.status }}</td>
+      <td>{{ bill.stage }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5" class="text-center text-muted">No bills available.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="d-flex gap-2">
+  <button class="btn btn-primary">Download CSV</button>
+  <button class="btn btn-outline-secondary">Export to Tally</button>
+  <button class="btn btn-outline-secondary">Export to Zoho Books</button>
+</div>
+{% endblock %}
