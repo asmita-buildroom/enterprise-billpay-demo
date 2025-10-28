@@ -1,0 +1,65 @@
+[
+  {
+    "state": "Karnataka",
+    "billers": [
+      "Bangalore Electricity Supply Company Ltd (BESCOM) - Karnataka (LT)",
+      "Bangalore Electricity Supply Company Ltd (BESCOM) - Karnataka (HT)",
+      "Chamundeshwari Electricity Supply Corporation Ltd (CESCOM) - Karnataka (LT)",
+      "Chamundeshwari Electricity Supply Corporation Ltd (CESCOM) - Karnataka (HT)"
+    ]
+  },
+  {
+    "state": "Maharashtra",
+    "billers": [
+      "Maharashtra State Electricity Distribution Company Ltd (MSEDCL) - Maharashtra (LT)",
+      "Maharashtra State Electricity Distribution Company Ltd (MSEDCL) - Maharashtra (HT)",
+      "Tata Power Company Ltd – Mumbai (TPC) - Maharashtra (LT)",
+      "Tata Power Company Ltd – Mumbai (TPC) - Maharashtra (HT)"
+    ]
+  },
+  {
+    "state": "Andhra Pradesh",
+    "billers": [
+      "Andhra Pradesh Central Power Distribution Corporation Ltd (APCPDCL) - Andhra Pradesh (LT)",
+      "Andhra Pradesh Central Power Distribution Corporation Ltd (APCPDCL) - Andhra Pradesh (HT)",
+      "Andhra Pradesh Southern Power Distribution Company Ltd (APSPDCL) - Andhra Pradesh (LT)",
+      "Andhra Pradesh Southern Power Distribution Company Ltd (APSPDCL) - Andhra Pradesh (HT)"
+    ]
+  },
+  {
+    "state": "Telangana",
+    "billers": [
+      "Northern Power Distribution Company of Telangana Ltd (TSNPDCL) - Telangana (LT)",
+      "Northern Power Distribution Company of Telangana Ltd (TSNPDCL) - Telangana (HT)",
+      "Southern Power Distribution Company of Telangana Ltd (TSSPDCL) - Telangana (LT)",
+      "Southern Power Distribution Company of Telangana Ltd (TSSPDCL) - Telangana (HT)"
+    ]
+  },
+  {
+    "state": "Delhi",
+    "billers": [
+      "BSES Rajdhani Power Ltd (BRPL) - Delhi (LT)",
+      "BSES Rajdhani Power Ltd (BRPL) - Delhi (HT)",
+      "Tata Power Delhi Distribution Ltd (TPDDL) - Delhi (LT)",
+      "Tata Power Delhi Distribution Ltd (TPDDL) - Delhi (HT)"
+    ]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "billers": [
+      "Paschimanchal Vidyut Vitran Nigam Ltd (PVVNL) - Uttar Pradesh (LT)",
+      "Paschimanchal Vidyut Vitran Nigam Ltd (PVVNL) - Uttar Pradesh (HT)",
+      "Kanpur Electricity Supply Company Ltd (KESCO) - Uttar Pradesh (LT)",
+      "Kanpur Electricity Supply Company Ltd (KESCO) - Uttar Pradesh (HT)"
+    ]
+  },
+  {
+    "state": "Tamil Nadu",
+    "billers": [
+      "Tamil Nadu Generation and Distribution Corporation Ltd (TANGEDCO) - Tamil Nadu (LT)",
+      "Tamil Nadu Generation and Distribution Corporation Ltd (TANGEDCO) - Tamil Nadu (HT)",
+      "Tamil Nadu Transmission Corporation Ltd (TANTRANSCO) - Tamil Nadu (LT)",
+      "Tamil Nadu Transmission Corporation Ltd (TANTRANSCO) - Tamil Nadu (HT)"
+    ]
+  }
+]
