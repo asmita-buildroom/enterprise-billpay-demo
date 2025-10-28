@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4 class="mb-3">Bill Summary</h4>
+
+<!-- Upload Bill Button -->
+<div class="mb-3">
+  {% if role == "Maker" %}
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload Bill</button>
+  {% endif %}
+  <a href="{{ url_for('reports') }}" class="btn btn-outline-secondary">Reports</a>
+  <a href="{{ url_for('audit') }}" class="btn btn-outline-secondary">Audit Trail</a>
+</div>
+
+<!-- Bill Table -->
+<table class="table table-bordered table-sm bg-white">
+  <thead class="table-light">
+    <tr>
+      <th>ID</th>
+      <th>Biller</th>
+      <th>Consumer #</th>
+      <th>Amount</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Stage</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bill in bills %}
+    <tr>
+      <td>{{ bill.id }}</td>
+      <td>{{ bill.biller }}</td>
+      <td>{{ bill.consumer_number }}</td>
+      <td>₹{{ bill.amount }}</td>
+      <td>{{ bill.due_date }}</td>
+      <td>{{ bill.status }}</td>
+      <td><span class="badge bg-secondary">{{ bill.stage }}</span></td>
+      <td>
+        {% if role == "Maker" %}
+          <a href="{{ url_for('update_status', bill_id=bill.id, new_stage='Checker') }}" class="btn btn-sm btn-outline-primary">Send to Checker</a>
+        {% elif role == "Checker" %}
+          <a href="{{ url_for('update_status', bill_id=bill.id, new_stage='Approver') }}" class="btn btn-sm btn-outline-success">Send to Approver</a>
+        {% elif role == "Approver" %}
+          <a href="{{ url_for('update_status', bill_id=bill.id, new_stage='Paid') }}" class="btn btn-sm btn-outline-dark">Mark Paid</a>
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="8" class="text-center text-muted">No bills found for {{ role }}.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Upload Bill</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="post">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Biller Name</label>
+            <select name="biller" class="form-select" required>
+              <option value="">Select Biller</option>
+              {% for group in billers %}
+              <optgroup label="{{ group.state }}">
+                {% for b in group.billers %}
+                <option value="{{ b }}">{{ b }}</option>
+                {% endfor %}
+              </optgroup>
+              {% endfor %}
+            </select>
+            <div class="form-text">Only Electricity billers are supported in this demo.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Consumer Number</label>
+            <input type="text" name="consumer_number" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Amount (₹)</label>
+            <input type="number" name="amount" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Due Date</label>
+            <input type="date" name="due_date" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
