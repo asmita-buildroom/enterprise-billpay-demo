@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4 class="mb-3">Audit Trail</h4>
+
+<table class="table table-bordered table-sm bg-white">
+  <thead class="table-light">
+    <tr>
+      <th>ID</th>
+      <th>Action</th>
+      <th>Role</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in audit %}
+    <tr>
+      <td>{{ entry.id }}</td>
+      <td>{{ entry.action }}</td>
+      <td>{{ entry.role }}</td>
+      <td>{{ entry.timestamp }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4" class="text-center text-muted">No actions logged yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
