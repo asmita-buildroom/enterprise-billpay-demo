@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="height:80vh;">
+  <div class="card shadow-sm p-4" style="width: 360px;">
+    <h4 class="text-center mb-3">Enterprise BillPay</h4>
+    <form method="post">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login as Maker</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
